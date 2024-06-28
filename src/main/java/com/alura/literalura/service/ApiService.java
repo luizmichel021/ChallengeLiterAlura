@@ -8,10 +8,10 @@ import java.net.http.HttpResponse;
 
 public class ApiService {
 
-    public String obterDados() {
+    public String obterDados(String endereco) {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://gutendex.com/books/?search=dom+casmurro"))
+                .uri(URI.create(endereco))
                 .build();
         HttpResponse<String> response = null;
         try {
